@@ -14,6 +14,7 @@ def generate_response(prompt):
         These Keywords can be based on the mood of the conversation, the genre of the song, the artist, or the lyrics of the song.
         Conversation: {prompt}
     """
+    print(prompt)
     chat_completion = client.chat.completions.create(
         messages=[
             {
@@ -31,11 +32,13 @@ def generate_response(prompt):
         messages=[
             {
                 "role": "user",
-                "content": f"What are the name of the songs in the given data? DATA: {result}",
+                "content": f"""based on the our conversation which song do you recommend Me to listen from the given Data.
+                    Conversation: ```{prompt}```
+                    DATA: {result}
+                """,
             }
         ],
         model="gemma-7b-it",
     )
     return chat_completion.choices[0].message.content
 
-# print(generate_response("Hello"))
