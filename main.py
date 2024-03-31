@@ -31,6 +31,9 @@ if st.session_state.input_count == len(questions):
         </div>
         """, unsafe_allow_html=True)
         st.write(res)
+        st.session_state.messages = []
+        st.session_state.conversation = []
+
 
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
