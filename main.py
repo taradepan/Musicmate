@@ -25,11 +25,12 @@ if st.session_state.input_count == len(questions):
     print(check)
     if check:
         res, link = chat.generate_response(st.session_state.conversation)
-        st.write(f"""
-        <div style="display: flex; justify-content: center;">
-            <iframe style="border-radius: 13px;" src="{link}?utm_source=generator" width="500" height="152" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-        </div>
-        """, unsafe_allow_html=True)
+        if link:
+            st.write(f"""
+            <div style="display: flex; justify-content: center;">
+                <iframe style="border-radius: 13px;" src="{link}?utm_source=generator" width="500" height="152" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            """, unsafe_allow_html=True)
         st.write(res)
         st.session_state.messages = []
         st.session_state.conversation = []

@@ -3,6 +3,7 @@ from dotenv import load_dotenv
 from groq import Groq
 import upload
 import re
+import json
 load_dotenv()
 
 client = Groq(
@@ -35,9 +36,9 @@ def generate_response(prompt):
         messages=[
             {
                 "role": "user",
-                "content": f"""based on the our conversation which song will you recommend Me to listen from the given Data.
+                "content": f"""based on the our conversation YOU HAVE TO recommend Me a song to listen from the given Data.
                 YOU HAVE TO GIVE ATLEAST 1 SONG RECOMMENDATION
-                DO NOT MENTION THE NAME OF THE ARTIST
+                NO NEED TO MENTION ANYTHING ABOUT THE NAME OF THE SONG ARTIST
                 MAKE SURE THE SONG IS INSIDE DOUBLE QUOTES
                     Conversation: ```{prompt}```
                     DATA: {result}
@@ -48,20 +49,24 @@ def generate_response(prompt):
     )
     res = chat_completion.choices[0].message.content
     print(res)
-    song_name_pattern = r'"(.*?)"'
-    match = re.search(song_name_pattern, res)
+    
+    with open('data.json') as f:
+        data = json.load(f)
+    spotify_link = None
+    
+    try: 
+        song_name_pattern = r'\*\*(.*?)\*\*|"([^"]*)"'
+    
+        match = re.search(song_name_pattern, res)
 
-    if match:
-        song_name = match.group(1)
-        print(song_name)
-
-    music = upload.query_search(song_name, 1)
-    spotify_link_pattern = r'https://open\.spotify\.com/embed/track/[^\s\'\"]*'
-    match = re.search(spotify_link_pattern, str(music))
-
-    if match:
-        spotify_link = match.group()
-        print(spotify_link)
-
-
+        if match:
+            song_name = match.group(1)
+            print(song_name)
+            for item in data["songs"]:
+                if item['title'].lower() == song_name.lower():
+                    spotify_link = item['spotify_link']
+                    break
+    except Exception as e:
+        print(e)
+    
     return res, spotify_link
