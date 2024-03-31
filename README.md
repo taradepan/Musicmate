@@ -4,5 +4,5 @@
 [Demo Video](https://youtu.be/Zcvrzd8k9fE)
 
 ## Contributors
-[<img src="https://github.com/taradepan.png" width="60px;"/><br /><sub><ahref="https://github.com/taradepan">taradepan</a></sub>](https://github.com/taradepan/Musicmate)
-[<img src="https://github.com/namruthahari.png" width="60px;"/><br /><sub><ahref="https://github.com/namruthahari">namruthahari</a></sub>](https://github.com/taradepan/Musicmate)
+[<img src="https://github.com/taradepan.png" width="60px;"/><br/><sub><ahref="https://github.com/taradepan">taradepan</a></sub>](https://github.com/taradepan/Musicmate)
+[<img src="https://github.com/namruthahari.png" width="60px;"/><br /><sub><ahref="https://github.com/namruthahari">namruthahari</a></sub>](https://github.com/namruthahari/Musicmate)
