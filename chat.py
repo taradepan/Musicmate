@@ -37,11 +37,11 @@ def generate_response(prompt):
             {
                 "role": "user",
                 "content": f"""
-                - UNDERSTAND OUR CONVERSATION GIVEN BELOW
+                - UNDERSTAND OUR CONVERSATION GIVEN BELOW.
                 - based on the our conversation YOU HAVE TO recommend Me a song to listen from the given Data.
-                - YOU HAVE TO GIVE ATLEAST `1` SONG RECOMMENDATION
-                - NO NEED TO MENTION ANYTHING ABOUT THE NAME OF THE SONG ARTIST
-                - MAKE SURE THE SONG NAME IS INSIDE DOUBLE QUOTES
+                - YOU HAVE TO GIVE ATLEAST `1` SONG RECOMMENDATION FROM THE GIVEN DATA.
+                - NO NEED TO MENTION ANYTHING ABOUT THE NAME OF THE SONG ARTIST.
+                - MAKE SURE THE SONG NAME IS INSIDE DOUBLE QUOTES.
                 
                 Conversation: ```{prompt}```
                 DATA: ```{result}```
