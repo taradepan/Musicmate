@@ -55,23 +55,24 @@ def generate_response(prompt):
     
     with open('data.json') as f:
         data = json.load(f)
+    spotify_links = []
     spotify_link = None
-    
+
     try: 
         song_name_pattern = r'\*\*"([^"]*)"\*\*|\*\*(.*?)\*\*|"([^"]*)"'
-        match = re.search(song_name_pattern, res)
+        matches = re.findall(song_name_pattern, res)
 
-        if match:
+        for match in matches:
             # Get the first non-None group
-            song_name = next(group for group in match.groups() if group is not None)
+            song_name = next(group for group in match if group is not None)
             print(song_name)
 
-            spotify_link = None
             for item in data["songs"]:
                 if item['title'].lower() == song_name.lower() and 'spotify_link' in item and item['spotify_link']:
-                    spotify_link = item['spotify_link']
+                    spotify_links.append(item['spotify_link'])
                     break
-
+            
+            spotify_link = spotify_links[0] if spotify_links else None
             if spotify_link:
                 print(spotify_link)
             else:
@@ -80,4 +81,4 @@ def generate_response(prompt):
     except Exception as e:
         print(e)
     
-    return res, spotify_link
+    return res, spotify_link 
