@@ -1,103 +1,116 @@
 {
-    "songs": [
-      {
-        "Song Name": "Blinding Lights",
-        "Keyword": "Retro",
-        "Description": "An electrifying synth-pop anthem that pulsates with 80s-inspired beats. Its nostalgic yet modern sound conjures images of neon-lit cityscapes and exhilarating night drives.",
-        "Mood": "Energetic, Retro",
-        "Genre Tags": ["Synth-pop", "R&B"]
-      },
-      {
-        "Song Name": "Starboy",
-        "Keyword": "Swagger",
-        "Description": "A swaggering blend of pop and R&B with futuristic production. The lyrics celebrate The Weeknd's rise to fame while maintaining an edgy and confident vibe. Catchy hooks and a pulsating beat drive the track.",
-        "Mood": "Confident, Bold",
-        "Genre Tags": ["Pop", "R&B"]
-      },
-      {
-        "Song Name": "Can't Feel My Face",
-        "Keyword": "Catchy",
-        "Description": "A funky pop anthem with infectious hooks and a groovy bassline. Despite its upbeat sound, the lyrics describe the numbing effects of drug addiction, adding depth to the song's seemingly carefree facade.",
-        "Mood": "Upbeat, Catchy",
-        "Genre Tags": ["Pop", "Funk"]
-      },
-      {
-        "Song Name": "The Hills",
-        "Keyword": "Dark",
-        "Description": "Dark and brooding, with haunting production and introspective lyrics exploring themes of excess, fame, and the dark underbelly of success. The Weeknd's raw vocals evoke a sense of urgency and longing",
-        "Mood": "Mysterious, Moody",
-        "Genre Tags": ["R&B", "Hip-hop"]
-      },
-      {
-        "Song Name": "Save Your Tears",
-        "Keyword": "Emotional",
-        "Description": "A synth-heavy, danceable track with a melancholic undertone. The lyrics speak of heartbreak and regret, yet the infectious beat and catchy melody create a juxtaposition of sadness and euphoria",
-        "Mood": "Bittersweet",
-        "Genre Tags": ["Synth-pop", "R&B"]
-      },
-      {
-        "Song Name": "Earned It",
-        "Keyword": "Sensual",
-        "Description": "A sensual and sultry ballad with lush orchestration and The Weeknd's smooth vocals. The song's lyrics exude confidence and desire, making it a perfect fit for romantic encounters or intimate moments.",
-        "Mood": "Seductive, Romantic",
-        "Genre Tags": ["R&B", "Soul"]
-      },
-      {
-        "Song Name": "Heartless",
-        "Keyword": "Cold",
-        "Description": "A moody and introspective song with pulsating beats and haunting vocals. The lyrics explore themes of heartbreak and emotional detachment, evoking a sense of numbness and resignation.",
-        "Mood": "Emotional, Heartbreak",
-        "Genre Tags": ["R&B", "Dark"]
-      },
-      {
-        "Song Name": "In Your Eyes",
-        "Keyword": "Romantic",
-        "Description": "An '80s-inspired synth-pop ballad with a catchy melody and romantic lyrics. The song's upbeat tempo and infectious hooks make it irresistibly danceable, while its heartfelt lyrics evoke a sense of longing and desire.",
-        "Mood": "Dance, Romance",
-        "Genre Tags": ["Synth-pop", "Pop"]
-      },
-      {
-        "Song Name": "Pray for Me",
-        "Keyword": "Epic",
-        "Description": "A powerful collaboration with Kendrick Lamar, blending elements of hip-hop and R&B with anthemic production. The song's lyrics grapple with themes of faith and redemption, evoking a sense of urgency and determination.",
-        "Mood": "Anthemic, Collaboration",
-        "Genre Tags": ["Hip-hop", "R&B"]
-      },
-      {
-        "Song Name": "Call Out My Name",
-        "Keyword": "Heartbreak",
-        "Description": "A haunting and emotionally raw ballad with sparse instrumentation and soulful vocals. The lyrics delve into themes of heartbreak and betrayal, conveying a sense of vulnerability and anguish.",
-        "Mood": "Emotional, Heartbreak, Introspective",
-        "Genre Tags": ["R&B"]
-      },
-      {
-        "Song Name": "I Feel It Coming",
-        "Keyword": "Smooth",
-        "Description": "The song encapsulates a mesmerizing blend of R&B, funk, and synth-pop, creating an ethereal and nostalgic atmosphere. The song's smooth melody, pulsating beats, and dreamy vocals evoke a sense of longing and anticipation. The lyrics speak of desire, intimacy, and surrender, adding depth to the emotional resonance of the track. As the music washes over the listener, a wave of introspection and sensuality emerges, leaving a lingering feeling of connection and yearning. With its irresistible groove and soulful delivery, 'I Feel It Coming' invites listeners to immerse themselves in its hypnotic embrace, making it a timeless anthem for lovers and dreamers alike.",
-        "Mood": "Dreamy, Sensual, Nostalgic, Introspective, Yearning, Hypnotic",
-        "Genre Tags": ["R&B", "Funk", "Synth-pop"]
-      },
-      {
-        "Song Name": "Often",
-        "Keyword": "Sensual",
-        "Description": "A provocative and sensual R&B track with infectious beats and hypnotic vocals. The lyrics explore themes of lust and desire, evoking a sense of intimacy and anticipation.",
-        "Mood": "Sensual, Provocative, Hypnotic",
-        "Genre Tags": ["R&B"]
-      },
-      {
-        "Song Name": "Wicked Games",
-        "Keyword": "Seductive",
-        "Description": "A sultry and atmospheric R&B track with moody production and seductive vocals. The song's provocative lyrics and haunting melody create an intense and immersive listening experience.",
-        "Mood": "Seductive, Moody, Atmospheric",
-        "Genre Tags": ["R&B"]
-      },
-      {
-        "Song Name": "Die for You",
-        "Keyword": "Devotion",
-        "Description": "A heartfelt and emotive R&B ballad with soaring vocals and lush instrumentation. The song's poignant lyrics express unwavering devotion and love, evoking a sense of warmth and sincerity.",
-        "Mood": "Romantic, Euphoric",
-        "Genre Tags": ["Pop", "Funk"]
-      }
-    ]
+  "songs": [
+    {
+      "title": "Blinding Lights",
+      "mood": "Retro",
+      "description": "An electrifying synth-pop anthem that pulsates with 80s-inspired beats. Its nostalgic yet modern sound conjures images of neon-lit cityscapes and exhilarating night drives.",
+      "attributes": ["Energetic", "Retro"],
+      "genres": ["Synth-pop", "R&B"],
+      "spotify_link": "https://open.spotify.com/track/0VjIjW4GlUZAMYd2vXMi3b?si=e76d7559667f419a"
+    },
+    {
+      "title": "Starboy",
+      "mood": "Swagger",
+      "description": "A swaggering blend of pop and R&B with futuristic production. The lyrics celebrate The Weeknd's rise to fame while maintaining an edgy and confident vibe. Catchy hooks and a pulsating beat drive the track.",
+      "attributes": ["Confident", "Bold"],
+      "genres": ["Pop", "R&B"],
+      "spotify_link": "https://open.spotify.com/track/7MXVkk9YMctZqd1Srtv4MB?si=7e96969c91cd4861"
+    },
+    {
+      "title": "Can't Feel My Face",
+      "mood": "Catchy",
+      "description": "A funky pop anthem with infectious hooks and a groovy bassline. Despite its upbeat sound, the lyrics describe the numbing effects of drug addiction, adding depth to the song's seemingly carefree facade.",
+      "attributes": ["Upbeat", "Catchy"],
+      "genres": ["Pop", "Funk"],
+      "spotify_link": "https://open.spotify.com/track/22VdIZQfgXJea34mQxlt81?si=ca79600db1ab4050"
+    },
+    {
+      "title": "The Hills",
+      "mood": "Dark",
+      "description": "Dark and brooding, with haunting production and introspective lyrics exploring themes of excess, fame, and the dark underbelly of success. The Weeknd's raw vocals evoke a sense of urgency and longing.",
+      "attributes": ["Mysterious", "Moody"],
+      "genres": ["R&B", "Hip-hop"],
+      "spotify_link": "https://open.spotify.com/track/7fBv7CLKzipRk6EC6TWHOB?si=1bb5497d1a7e4aa4"
+    },
+    {
+      "title": "Save Your Tears",
+      "mood": "Emotional",
+      "description": "A synth-heavy, danceable track with a melancholic undertone. The lyrics speak of heartbreak and regret, yet the infectious beat and catchy melody create a juxtaposition of sadness and euphoria.",
+      "attributes": ["Bittersweet", "Vulnerable"],
+      "genres": ["Synth-pop", "R&B"],
+      "spotify_link": "https://open.spotify.com/track/5QO79kh1waicV47BqGRL3g?si=ab488ed9fc06459c"
+    },
+    {
+      "title": "Earned It",
+      "mood": "Sensual",
+      "description": "A sensual and sultry ballad with lush orchestration and The Weeknd's smooth vocals. The song's lyrics exude confidence and desire, making it a perfect fit for romantic encounters or intimate moments.",
+      "attributes": ["Seductive", "Romantic"],
+      "genres": ["R&B", "Soul"],
+      "spotify_link": "https://open.spotify.com/track/2PIvq1pGrUjY007X5y1UpM?si=b895638b80924527"
+    },
+    {
+      "title": "Heartless",
+      "mood": "Cold",
+      "description": "A moody and introspective song with pulsating beats and haunting vocals. The lyrics explore themes of heartbreak and emotional detachment, evoking a sense of numbness and resignation.",
+      "attributes": ["Unapologetic", "Hedonistic"],
+      "genres": ["R&B", "Dark"],
+      "spotify_link": "https://open.spotify.com/track/6bnF93Rx87YqUBLSgjiMU8?si=3c618169f21345a2"
+    },
+    {
+      "title": "In Your Eyes",
+      "mood": "Romantic",
+      "description": "An '80s-inspired synth-pop ballad with a catchy melody and romantic lyrics. The song's upbeat tempo and infectious hooks make it irresistibly danceable, while its heartfelt lyrics evoke a sense of longing and desire.",
+      "attributes": ["Groovy", "Passionate"],
+      "genres": ["Synth-pop", "Pop"],
+      "spotify_link": "https://open.spotify.com/track/7szuecWAPwGoV1e5vGu8tl?si=535f8a2ac37140ea"
+    },
+    {
+      "title": "Pray for Me",
+      "mood": "Epic",
+      "description": "A powerful collaboration with Kendrick Lamar, blending elements of hip-hop and R&B with anthemic production. The song's lyrics grapple with themes of faith and redemption, evoking a sense of urgency and determination.",
+      "attributes": ["Powerful", "Hope"],
+      "genres": ["Hip-hop", "R&B"],
+      "spotify_link": "https://open.spotify.com/track/5W3Mi5lW7CIr3eTj1cc69p?si=4d7d0f109fab4349"
+    },
+    {
+      "title": "Call Out My Name",
+      "mood": "Heartbreak",
+      "description": "A haunting and emotionally raw ballad with sparse instrumentation and soulful vocals. The lyrics delve into themes of heartbreak and betrayal, conveying a sense of vulnerability and anguish.",
+      "attributes": ["Soulful", "Emotional"],
+      "genres": ["R&B"],
+      "spotify_link": "https://open.spotify.com/track/09mEdoA6zrmBPgTEN5qXmN?si=4c64562d49354db4"
+    },
+    {
+      "title": "I Feel It Coming",
+      "mood": "Smooth",
+      "description": "The song encapsulates a mesmerizing blend of R&B, funk, and synth-pop, creating an ethereal and nostalgic atmosphere. The song's smooth melody, pulsating beats, and dreamy vocals evoke a sense of longing and anticipation.",
+      "attributes": ["Dreamy", "Sensual", "Nostalgic", "Introspective", "Yearning", "Hypnotic"],
+      "genres": ["R&B", "Funk", "Synth-pop"],
+      "spotify_link": "https://open.spotify.com/track/3dhjNA0jGA8vHBQ1VdD6vV?si=38124ebb5d30454a"
+    },
+    {
+      "title": "Often",
+      "mood": "Sensual",
+      "description": "A provocative and sensual R&B track with infectious beats and hypnotic vocals. The lyrics explore themes of lust and desire, evoking a sense of intimacy and anticipation.",
+      "keywords": ["Sensual", "Provocative", "Hypnotic"],
+      "genre": "R&B",
+      "spotify_link": "https://open.spotify.com/track/4PhsKqMdgMEUSstTDAmMpg?si=fa95e565feca44c4"
+  },
+  {
+      "title": "Wicked Games",
+      "mood": "Seductive",
+      "description": "A sultry and atmospheric R&B track with moody production and seductive vocals. The song's provocative lyrics and haunting melody create an intense and immersive listening experience.",
+      "keywords": ["Seductive", "Moody", "Atmospheric"],
+      "genre": "R&B",
+      "spotify_link": "https://open.spotify.com/track/6VwBbL8CzPiC4QV66ay7oR?si=11dda92cb0cc4c82"
+  },
+  {
+      "title": "Die for You",
+      "mood": "Devotion",
+      "description": "A heartfelt and emotive R&B ballad with soaring vocals and lush instrumentation. The song's poignant lyrics express unwavering devotion and love, evoking a sense of warmth and sincerity.",
+      "keywords": ["Romantic", "Euphoric"],
+      "genre": "Pop, Funk",
+      "spotify_link": "https://open.spotify.com/track/2Ch7LmS7r2Gy2kc64wv3Bz?si=a47bfe6210b94907"
   }
-  
+  ]
+}
