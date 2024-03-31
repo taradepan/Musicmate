@@ -2,17 +2,14 @@ import chromadb
 import os 
 import json
 import dotenv
-import google.generativeai as genai
 import chromadb.utils.embedding_functions as embedding_functions
 dotenv.load_dotenv()
-
-genai.configure(api_key=os.environ.get('GOOGLE_API_KEY')) 
 
 huggingface_ef = embedding_functions.HuggingFaceEmbeddingFunction(
     api_key=os.environ.get("HUGGINGFACE_API_KEY"),
     model_name="BAAI/bge-small-en-v1.5"
 )
-# google_ef  = embedding_functions.GoogleGenerativeAiEmbeddingFunction(api_key=os.environ.get("GOOGLE_API_KEY"))    
+
 client = chromadb.Client()
 collection = client.get_or_create_collection(name="main")
 
@@ -32,11 +29,11 @@ def embed():
             embeddings = huggingface_ef([str(song)])
             db(str(song), embeddings[0][0], str(data.index(song)))
 
-def query_search(song):
+def query_search(song, n=3):
     embedding=huggingface_ef([song])
     res=collection.query(
         query_embeddings=[embedding[0][0]],
-        n_results=3,
+        n_results=n,
     )
 
     return res["documents"]
