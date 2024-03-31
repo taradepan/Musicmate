@@ -37,7 +37,7 @@ def generate_response(prompt):
             {
                 "role": "user",
                 "content": f"""
-                - UNDERSTAND THE GIVEN CONVERSATION
+                - UNDERSTAND OUR CONVERSATION GIVEN BELOW
                 - based on the our conversation YOU HAVE TO recommend Me a song to listen from the given Data.
                 - YOU HAVE TO GIVE ATLEAST `1` SONG RECOMMENDATION
                 - NO NEED TO MENTION ANYTHING ABOUT THE NAME OF THE SONG ARTIST
