@@ -5,5 +5,5 @@
 [Demo Video](https://youtu.be/Zcvrzd8k9fE)
 
 ## Contributors
-[<img src="https://github.com/taradepan.png" width="60px;"/>](https://github.com/taradepan/Musicmate)
-[<img src="https://github.com/namruthahari.png" width="60px;"/>](https://github.com/taradepan/Musicmate)
+[<img src="https://github.com/taradepan.png" width="60px;"/>](https://github.com/taradepan)
+[<img src="https://github.com/namruthahari.png" width="60px;"/>](https://github.com/namruthahari)
