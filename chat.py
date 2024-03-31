@@ -60,17 +60,21 @@ def generate_response(prompt):
     
     try: 
         song_name_pattern = r'\*\*"([^"]*)"\*\*|\*\*(.*?)\*\*|"([^"]*)"'
-    
-        match = re.search(song_name_pattern, res)
-
-        if match:
-            song_name = match.group(1)
-            print(song_name)
-            for item in data["songs"]:
-                if item['title'].lower() == song_name.lower():
-                    spotify_link = item['spotify_link']
+        
+        matches = re.findall(song_name_pattern, res)
+        song_names = []
+        if matches:
+            for match in matches:
+                song_name = match[0] or match[1] or match[2]
+                song_names.append(song_name)
+                print(song_name)
+                for item in data["songs"]:
+                    if item['title'].lower() == song_name.lower():
+                        spotify_link = item.get('spotify_link')
+                        if spotify_link:
+                            break
+                if spotify_link:
                     break
     except Exception as e:
         print(e)
-    
     return res, spotify_link
