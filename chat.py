@@ -48,7 +48,7 @@ def get_music(data):
         messages=[
             {
                 "role": "user",
-                "content": f"""Your task is to analyze the given text data and find the best music that the user can listen to.
+                "content": f"""Your task is to analyze the given text data and find the best music that the user can listen to which is mentioned in the given data.
                     GIVE ONLY ONE SONG.
                     Output should be in following format:
                     Song Name: <song name>
