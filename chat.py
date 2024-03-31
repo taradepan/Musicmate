@@ -30,12 +30,6 @@ def generate_response(prompt):
     print(res)
     result = upload.query_search(res)
     print(result)
-    spotify_link_pattern = r'https://open\.spotify\.com/embed/track/[^\s\'\"]*'
-    match = re.search(spotify_link_pattern, str(result))
-
-    if match:
-        spotify_link = match.group()
-        print(spotify_link)
 
     chat_completion = client.chat.completions.create(
         messages=[
@@ -43,6 +37,7 @@ def generate_response(prompt):
                 "role": "user",
                 "content": f"""based on the our conversation which song will you recommend Me to listen from the given Data.
                 YOU HAVE TO GIVE ATLEAST 1 SONG RECOMMENDATION
+                MAKE SURE THE SONG IS INSIDE DOUBLE QUOTES
                     Conversation: ```{prompt}```
                     DATA: {result}
                 """,
@@ -50,4 +45,22 @@ def generate_response(prompt):
         ],
         model="gemma-7b-it",
     )
-    return chat_completion.choices[0].message.content, spotify_link
+    res = chat_completion.choices[0].message.content
+    print(res)
+    song_name_pattern = r'"(.*?)"'
+    match = re.search(song_name_pattern, res)
+
+    if match:
+        song_name = match.group(1)
+        print(song_name)
+
+    music = upload.query_search(song_name, 1)
+    spotify_link_pattern = r'https://open\.spotify\.com/embed/track/[^\s\'\"]*'
+    match = re.search(spotify_link_pattern, str(music))
+
+    if match:
+        spotify_link = match.group()
+        print(spotify_link)
+
+
+    return res, spotify_link

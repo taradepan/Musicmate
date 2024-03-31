@@ -7,7 +7,7 @@ dotenv.load_dotenv()
 
 huggingface_ef = embedding_functions.HuggingFaceEmbeddingFunction(
     api_key=os.environ.get("HUGGINGFACE_API_KEY"),
-    model_name="BAAI/bge-small-en-v1.5"
+    model_name="sentence-transformers/all-MiniLM-L6-v2"
 )
 
 client = chromadb.Client()
@@ -38,4 +38,4 @@ def query_search(song, n=3):
 
     return res["documents"]
 
-# embed()
+embed()
