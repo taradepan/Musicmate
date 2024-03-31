@@ -41,7 +41,8 @@ def generate_response(prompt):
         messages=[
             {
                 "role": "user",
-                "content": f"""based on the our conversation which song do you recommend Me to listen from the given Data.
+                "content": f"""based on the our conversation which song will you recommend Me to listen from the given Data.
+                YOU HAVE TO GIVE ATLEAST 1 SONG RECOMMENDATION
                     Conversation: ```{prompt}```
                     DATA: {result}
                 """,
