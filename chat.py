@@ -36,12 +36,15 @@ def generate_response(prompt):
         messages=[
             {
                 "role": "user",
-                "content": f"""based on the our conversation YOU HAVE TO recommend Me a song to listen from the given Data.
-                YOU HAVE TO GIVE ATLEAST 1 SONG RECOMMENDATION
-                NO NEED TO MENTION ANYTHING ABOUT THE NAME OF THE SONG ARTIST
-                MAKE SURE THE SONG IS INSIDE DOUBLE QUOTES
-                    Conversation: ```{prompt}```
-                    DATA: {result}
+                "content": f"""
+                - UNDERSTAND THE GIVEN CONVERSATION
+                - based on the our conversation YOU HAVE TO recommend Me a song to listen from the given Data.
+                - YOU HAVE TO GIVE ATLEAST `1` SONG RECOMMENDATION
+                - NO NEED TO MENTION ANYTHING ABOUT THE NAME OF THE SONG ARTIST
+                - MAKE SURE THE SONG NAME IS INSIDE DOUBLE QUOTES
+                
+                Conversation: ```{prompt}```
+                DATA: ```{result}```
                 """,
             }
         ],
@@ -55,17 +58,25 @@ def generate_response(prompt):
     spotify_link = None
     
     try: 
-        song_name_pattern = r'\*\*(.*?)\*\*|"([^"]*)"'
-    
+        song_name_pattern = r'\*\*"([^"]*)"\*\*|\*\*(.*?)\*\*|"([^"]*)"'
         match = re.search(song_name_pattern, res)
 
         if match:
-            song_name = match.group(1)
+            # Get the first non-None group
+            song_name = next(group for group in match.groups() if group is not None)
             print(song_name)
+
+            spotify_link = None
             for item in data["songs"]:
-                if item['title'].lower() == song_name.lower():
+                if item['title'].lower() == song_name.lower() and 'spotify_link' in item and item['spotify_link']:
                     spotify_link = item['spotify_link']
                     break
+
+            if spotify_link:
+                print(spotify_link)
+            else:
+                print(f"No Spotify link found for song: {song_name}")
+
     except Exception as e:
         print(e)
     
