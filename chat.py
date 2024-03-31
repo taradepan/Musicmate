@@ -37,6 +37,7 @@ def generate_response(prompt):
                 "role": "user",
                 "content": f"""based on the our conversation which song will you recommend Me to listen from the given Data.
                 YOU HAVE TO GIVE ATLEAST 1 SONG RECOMMENDATION
+                DO NOT MENTION THE NAME OF THE ARTIST
                 MAKE SURE THE SONG IS INSIDE DOUBLE QUOTES
                     Conversation: ```{prompt}```
                     DATA: {result}
