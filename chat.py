@@ -36,12 +36,16 @@ def generate_response(prompt):
         messages=[
             {
                 "role": "user",
-                "content": f"""based on the our conversation YOU HAVE TO recommend Me a song to listen from the given Data.
-                YOU HAVE TO GIVE ATLEAST 1 SONG RECOMMENDATION
-                NO NEED TO MENTION ANYTHING ABOUT THE NAME OF THE SONG ARTIST
-                MAKE SURE THE SONG IS INSIDE DOUBLE QUOTES
+                "content": f"""
+                    - based on the our conversation YOU HAVE TO recommend Me a song to listen from the given Data.
+                    - YOU HAVE TO GIVE ATLEAST 1 SONG RECOMMENDATION FROM THE GIVEN DATA.
+                    - NO NEED TO MENTION ANYTHING ABOUT THE NAME OF THE SONG ARTIST.
+                    - MAKE SURE THE SONG IS INSIDE DOUBLE QUOTES.
                     Conversation: ```{prompt}```
                     DATA: {result}
+                    - What is the Output? 
+                    - Do you think you have given the correct output? If yes then move to the next step otherwise go back to the first step. REMEMBER YOU HAVE TO PROVIDE ATLEAST 1 SONG.
+                    - STRICTLY GIVE YOUR RESPONSE CONTAINING THE SONG NAME (in Double quotes) AND THE REASON FOR SELECTING THIS SONG ONLY. 
                 """,
             }
         ],
@@ -55,7 +59,7 @@ def generate_response(prompt):
     spotify_link = None
     
     try: 
-        song_name_pattern = r'\*\*(.*?)\*\*|"([^"]*)"'
+        song_name_pattern = r'\*\*"([^"]*)"\*\*|\*\*(.*?)\*\*|"([^"]*)"'
     
         match = re.search(song_name_pattern, res)
 
