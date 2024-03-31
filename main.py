@@ -4,7 +4,6 @@ import streamlit.components.v1 as components
 
 st.title("MusicMATE")
 
-
 questions = [
     "How are you feeling today?",
     "What was the best part of your day so far?",
@@ -25,9 +24,12 @@ if st.session_state.input_count == len(questions):
     check = True
     print(check)
     if check:
-        st.write("Chat Ended")
         res, link = chat.generate_response(st.session_state.conversation)
-        components.iframe(link, width=700, height=300)
+        st.write(f"""
+        <div style="display: flex; justify-content: center;">
+            <iframe style="border-radius: 13px;" src="{link}?utm_source=generator" width="500" height="152" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+        """, unsafe_allow_html=True)
         st.write(res)
 
 for message in st.session_state.messages:
