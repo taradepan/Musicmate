@@ -38,4 +38,4 @@ def query_search(song, n=3):
 
     return res["documents"]
 
-# embed()
+embed()
