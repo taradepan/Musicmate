@@ -26,9 +26,8 @@ if st.session_state.input_count == len(questions):
     print(check)
     if check:
         st.write("Chat Ended")
-        res = chat.generate_response(st.session_state.conversation)
-        link = chat.get_music(res)
-        components.iframe(link, width=700, height=150)
+        res, link = chat.generate_response(st.session_state.conversation)
+        components.iframe(link, width=700, height=300)
         st.write(res)
 
 for message in st.session_state.messages:
