@@ -36,15 +36,12 @@ def generate_response(prompt):
         messages=[
             {
                 "role": "user",
-                "content": f"""
-                - UNDERSTAND OUR CONVERSATION GIVEN BELOW.
-                - based on the our conversation YOU HAVE TO recommend Me a song to listen from the given Data.
-                - YOU HAVE TO GIVE ATLEAST `1` SONG RECOMMENDATION FROM THE GIVEN DATA.
-                - NO NEED TO MENTION ANYTHING ABOUT THE NAME OF THE SONG ARTIST.
-                - MAKE SURE THE SONG NAME IS INSIDE DOUBLE QUOTES.
-                
-                Conversation: ```{prompt}```
-                DATA: ```{result}```
+                "content": f"""based on the our conversation YOU HAVE TO recommend Me a song to listen from the given Data.
+                YOU HAVE TO GIVE ATLEAST 1 SONG RECOMMENDATION
+                NO NEED TO MENTION ANYTHING ABOUT THE NAME OF THE SONG ARTIST
+                MAKE SURE THE SONG IS INSIDE DOUBLE QUOTES
+                    Conversation: ```{prompt}```
+                    DATA: {result}
                 """,
             }
         ],
@@ -55,30 +52,21 @@ def generate_response(prompt):
     
     with open('data.json') as f:
         data = json.load(f)
-    spotify_links = []
     spotify_link = None
-
+    
     try: 
-        song_name_pattern = r'\*\*"([^"]*)"\*\*|\*\*(.*?)\*\*|"([^"]*)"'
-        matches = re.findall(song_name_pattern, res)
+        song_name_pattern = r'\*\*(.*?)\*\*|"([^"]*)"'
+    
+        match = re.search(song_name_pattern, res)
 
-        for match in matches:
-            # Get the first non-None group
-            song_name = next(group for group in match if group is not None)
+        if match:
+            song_name = match.group(1)
             print(song_name)
-
             for item in data["songs"]:
-                if item['title'].lower() == song_name.lower() and 'spotify_link' in item and item['spotify_link']:
-                    spotify_links.append(item['spotify_link'])
+                if item['title'].lower() == song_name.lower():
+                    spotify_link = item['spotify_link']
                     break
-            
-            spotify_link = spotify_links[0] if spotify_links else None
-            if spotify_link:
-                print(spotify_link)
-            else:
-                print(f"No Spotify link found for song: {song_name}")
-
     except Exception as e:
         print(e)
     
-    return res, spotify_link 
+    return res, spotify_link
